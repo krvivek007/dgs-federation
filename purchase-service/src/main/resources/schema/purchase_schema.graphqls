@@ -1,0 +1,29 @@
+# ↑ This tells GraphQL Federation this schema extends another service
+type Book @key(fields: "id") @extends{
+    id: Int! @external
+    purchase: Purchase
+}
+
+type Purchase {
+    id: ID!
+    price: Float
+    currency: String
+    paymentMode: PaymentMode
+    buyer: Buyer
+    purchasedOn: String
+}
+
+enum PaymentMode {
+    UPI
+    CREDIT_CARD
+    DEBIT_CARD
+    NET_BANKING
+    COD
+}
+
+type Buyer {
+    id: Int!
+    name: String
+    email: String
+    phone: String
+}
