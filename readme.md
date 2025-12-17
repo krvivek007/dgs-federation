@@ -63,6 +63,29 @@ This repository demonstrates a small federated GraphQL setup built with Netflix 
      npm install
      npm start
      ```
+   
+   > **Note**: The gateway is configured to use `localhost` ports by default. You can override these with `BOOK_SERVICE_URL` and `PURCHASE_SERVICE_URL` environment variables.
+
+### Docker (Recommended) 🐳
+
+You can run the entire stack using Docker Compose. This handles building, networking, and health checks automatically.
+
+1. **Start all services**:
+   ```bash
+   docker-compose up --build -d
+   ```
+   *The gateway will automatically wait for the backend services to be "healthy" before starting.*
+
+2. **Access services**:
+   - Gateway: [http://localhost:8080/graphql](http://localhost:8080/graphql)
+   - Book Service: [http://localhost:8081/graphql](http://localhost:8081/graphql)
+   - Purchase Service: [http://localhost:8082/graphql](http://localhost:8082/graphql)
+
+3. **Stop services**:
+   ```bash
+   docker-compose down
+   ```
+
 
 3. Run the GraphQL client (examples)
 
@@ -120,7 +143,4 @@ No license specified (add one if you plan to open-source this project).
 
 ---
 
-If you want, I can also:
-- Add run scripts or Dockerfiles for easier local setup ✅
-- Add a single `dev` script to start all services with one command ✅
 
