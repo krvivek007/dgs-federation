@@ -1,0 +1,34 @@
+# Node dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Bundler caches
+.cache/
+.parcel-cache/
+
+# Next.js
+.next/
+
+# Misc
+*.local
+*.log
